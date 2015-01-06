@@ -1,0 +1,11 @@
+diff -Naur shellinabox_fork-88822c1f4c030d5f05ced097eb7b6668ff3d7c6f.old/shellinabox/service.c shellinabox_fork-88822c1f4c030d5f05ced097eb7b6668ff3d7c6f/shellinabox/service.c
+--- shellinabox_fork-88822c1f4c030d5f05ced097eb7b6668ff3d7c6f.old/shellinabox/service.c	2014-06-11 11:34:52.304810724 +0200
++++ shellinabox_fork-88822c1f4c030d5f05ced097eb7b6668ff3d7c6f/shellinabox/service.c	2014-06-11 11:35:18.733619259 +0200
+@@ -159,6 +159,7 @@
+           "-oPubkeyAuthentication=no -oRhostsRSAAuthentication=no "
+           "-oRSAAuthentication=no -oStrictHostKeyChecking=no -oTunnel=no "
+           "-oUserKnownHostsFile=/dev/null -oVerifyHostKeyDNS=no "
++          "-oProxyCommand=none "
+ // beewoolie-2012.03.30: while it would be nice to disable this
+ //          feature, we cannot be sure that it is available on the
+ //          target server.  Removing it for the sake of Centos.

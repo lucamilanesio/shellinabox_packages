@@ -1,0 +1,14 @@
+[Unit]
+Description=Shell In A Box daemon
+Documentation=man:shellinaboxd(1)
+After=network.target nss-lookup.target
+
+[Service]
+EnvironmentFile=-/etc/sysconfig/shellinaboxd
+WorkingDirectory=/usr/share/shellinabox
+ExecStart=/usr/sbin/shellinaboxd -u $USER -g $GROUP --cert=${CERTDIR} --port=${PORT} $OPTS
+Restart=on-failure
+
+[Install]
+WantedBy=multi-user.target
+
