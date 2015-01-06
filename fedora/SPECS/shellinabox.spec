@@ -8,7 +8,7 @@
 
 Name:           shellinabox
 Version:        2.14
-Release:        28.git%{shortcommit}%{?dist}
+Release:        28.fix275.git%{shortcommit}%{?dist}
 Summary:        Web based AJAX terminal emulator
 Group:          System Environment/Daemons
 License:        GPLv2
@@ -18,6 +18,7 @@ Source1:        shellinaboxd.sysconfig
 Source2:        shellinaboxd.service
 Source3:        shellinaboxd.init
 Patch0:         %{name}-ssh-options.patch
+Patch1:         %{name}-http-proxy-issue-275-fix.patch
 BuildRoot:      %{_tmppath}/%{name}-%{version}-%{release}-root-%(%{__id_u} -n)
 
 BuildRequires:  openssl-devel
@@ -48,6 +49,7 @@ browser plugins.
 %prep
 %setup -qn %{name}_fork-%{commit}
 %patch0 -p1
+%patch1 -p1
 
 %build
 %configure --disable-runtime-loading
